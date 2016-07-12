@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Owin.Hosting;
 using NancyFx.Microservice.Infrastructure;
+using NancyFx.Microservice.Settings;
 
 namespace NancyFx.Microservice
 {
@@ -8,7 +9,8 @@ namespace NancyFx.Microservice
     {
         static void Main(string[] args)
         {
-            var uri = new Uri("http://localhost:5101");
+            var settings = new WebAppSettings(new ArgumentParser(), new EnvironmentWrapper());
+            var uri = new Uri($"http://localhost:{settings.Port}");
             
             using (WebApp.Start<RestService>(uri.ToString()))
             {

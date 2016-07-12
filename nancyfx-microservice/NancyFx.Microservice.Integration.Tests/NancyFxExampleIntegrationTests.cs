@@ -1,8 +1,9 @@
 ﻿using Autofac;
 using FluentAssertions;
 using Nancy.Testing;
+using NancyFx.Microservice.Example;
 using NancyFx.Microservice.Infrastructure;
-using NancyFx.Microservice.Modules;
+using NancyFx.Microservice.Settings;
 using NSubstitute;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoNSubstitute;
@@ -18,6 +19,7 @@ namespace NancyFx.Microservice.Integration.Tests
         private class Mocks
         {
             public IExternalDependency ExternalDependency { get; set; }
+            public IEnvironment Environment { get; set; }
         }
 
         public NancyFxExampleIntegrationTests()
@@ -42,6 +44,7 @@ namespace NancyFx.Microservice.Integration.Tests
                 var builder = new ContainerBuilder();
 
                 builder.RegisterInstance(_mocks.ExternalDependency).As<IExternalDependency>();
+                builder.RegisterInstance(_mocks.Environment).As<IEnvironment>();
 
                 builder.Update(existingContainer.ComponentRegistry);                
             }
@@ -61,7 +64,7 @@ namespace NancyFx.Microservice.Integration.Tests
         }
 
         [Fact]
-        public void Example_of_how_to_inject_mocks_into_application_bootstrapper_by_overriding_bootstrapper_class()
+        public void Example_of_how_to_inject_mocks_into_application_bootstrapper_by_deriving_from_bootstrapper_class()
         {
             var bootstrapper = new TestBootstrapper(_mocks);
             var browser = new Browser(bootstrapper);
@@ -73,6 +76,21 @@ namespace NancyFx.Microservice.Integration.Tests
 
             // assert
             result.Body.AsString().Should().Be("DoStuffMockCalled");
+        }
+
+        [Fact]
+        public void Example_of_how_to_test_a_module_that_uses_commandline_arguments()
+        {
+            var bootstrapper = new TestBootstrapper(_mocks);
+            var browser = new Browser(bootstrapper);
+            string expectedPort = "1111";
+            _mocks.Environment.GetCommandLineArgs().Returns(new[] {"-p", expectedPort });
+            
+            // act
+            var result = browser.Get("/settings/port", with => { with.HttpRequest(); });
+
+            // assert
+            result.Body.AsString().Should().Be(expectedPort);
         }
     }
 }

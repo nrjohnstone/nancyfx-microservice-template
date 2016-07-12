@@ -1,4 +1,6 @@
-﻿namespace NancyFx.Microservice.Modules
+﻿using NancyFx.Microservice.Modules;
+
+namespace NancyFx.Microservice.Example
 {
     class ExternalDependency : IExternalDependency
     {

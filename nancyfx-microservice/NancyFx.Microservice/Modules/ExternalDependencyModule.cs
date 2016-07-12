@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nancy;
+using NancyFx.Microservice.Example;
 
 namespace NancyFx.Microservice.Modules
 {

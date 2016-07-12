@@ -85,10 +85,18 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\CommandLineArgumentParserTests.cs" />
+    <Compile Include="Settings\WebAppSettingsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NancyFx.Microservice\NancyFx.Microservice.csproj">
+      <Project>{68558FAD-D001-4067-BE68-FE6CD2829BF4}</Project>
+      <Name>NancyFx.Microservice</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
