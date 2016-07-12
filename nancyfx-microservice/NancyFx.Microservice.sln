@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyFx.Microservice.Integration.Tests", "NancyFx.Microservice.Integration.Tests\NancyFx.Microservice.Integration.Tests.csproj", "{8BE973E4-C121-44BC-AC73-CB8A44235311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyFx.Microservice", "NancyFx.Microservice\NancyFx.Microservice.csproj", "{68558FAD-D001-4067-BE68-FE6CD2829BF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyFx.Microservice.Tests", "NancyFx.Microservice.Tests\NancyFx.Microservice.Tests.csproj", "{29AC0AE4-71F6-4730-BC3D-173753DC6F09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BE973E4-C121-44BC-AC73-CB8A44235311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE973E4-C121-44BC-AC73-CB8A44235311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE973E4-C121-44BC-AC73-CB8A44235311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE973E4-C121-44BC-AC73-CB8A44235311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68558FAD-D001-4067-BE68-FE6CD2829BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68558FAD-D001-4067-BE68-FE6CD2829BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68558FAD-D001-4067-BE68-FE6CD2829BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68558FAD-D001-4067-BE68-FE6CD2829BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AC0AE4-71F6-4730-BC3D-173753DC6F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AC0AE4-71F6-4730-BC3D-173753DC6F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AC0AE4-71F6-4730-BC3D-173753DC6F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AC0AE4-71F6-4730-BC3D-173753DC6F09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
