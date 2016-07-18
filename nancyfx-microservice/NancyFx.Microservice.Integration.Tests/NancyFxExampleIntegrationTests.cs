@@ -64,6 +64,19 @@ namespace NancyFx.Microservice.Integration.Tests
         }
 
         [Fact]
+        public void Example_of_testing_a_route_with_parameters()
+        {
+            var bootstrapper = new ApplicationNancyBootstrapper();
+            var browser = new Browser(bootstrapper);
+
+            // act
+            var result = browser.Get("/echo/someTextToReplyWith", with => { with.HttpRequest(); });
+
+            // assert
+            result.Body.AsString().Should().Be("someTextToReplyWith");
+        }
+
+        [Fact]
         public void Example_of_how_to_inject_mocks_into_application_bootstrapper_by_deriving_from_bootstrapper_class()
         {
             var bootstrapper = new TestBootstrapper(_mocks);
