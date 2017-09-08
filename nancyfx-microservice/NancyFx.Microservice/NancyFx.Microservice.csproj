@@ -113,6 +113,7 @@
     <Compile Include="Modules\ExternalDependencyModule.cs" />
     <Compile Include="Example\ExternalDependency.cs" />
     <Compile Include="Example\IExternalDependency.cs" />
+    <Compile Include="Modules\OrderExampleModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\RestService.cs" />
